@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "provision": "node ./index.js | npx pino-pretty --colorize --translateTime --ignore hostname,pid",
+    "forwarder": "node ./forwarder.js | npx pino-pretty --colorize --translateTime --ignore hostname,pid"
   },
   "author": "",
   "license": "ISC",
