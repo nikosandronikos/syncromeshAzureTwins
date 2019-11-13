@@ -8,7 +8,7 @@ const { createConnection } = require('./azure/connect');
 const { getDevices } = require('./azure/graph');
 
 const { IndraClient } = require('./indraClient/IndraClient');
-const { cmdTypes } = require('./indraCLient/cmdTypes');
+const { cmdTypes } = require('./indraClient/cmdTypes');
 
 const log = require('./utils/logging').log.child({module: 'forwarder'});
 
