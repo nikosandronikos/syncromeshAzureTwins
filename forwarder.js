@@ -122,6 +122,20 @@ async function main() {
                 client.sendEvent(message, printResultFor('send'));
             });
 
+            indraClient.onCommand(cmdTypes.motionStatus, (id, cmd) => {
+                const client = mqttConnections.get(cmd.longAddr.toString(16));
+
+                if (!client) {
+                    log.error(`No client for ${cmd.longAddr.toString(16)}`);
+                    return;
+                }
+
+                const sensorId = `${cmd.longAddr.toString(16)}.${cmd.devNum}`;
+
+                const message = createPayload(sensorId, {SensorValue: cmd.values[0]});
+                client.sendEvent(message, printResultFor('send'));
+            });
+
             await indraClient.connect();
         }
 
