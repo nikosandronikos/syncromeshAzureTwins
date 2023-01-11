@@ -16,7 +16,7 @@
     "azure-iot-device-mqtt": "^1.11.0",
     "dotenv": "^8.2.0",
     "form-data": "^3.0.0",
-    "knex": "^0.20.0",
+    "knex": "^2.4.0",
     "pino": "^5.13.5",
     "sqlite3": "^4.1.0",
     "zeromq": "^5.1.1"
